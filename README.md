@@ -1,8 +1,8 @@
-# DROP-DEEP
-DROP-DEEP is a polygenic risk score tool that based on dimensionality reduction with principal component analysis (PCA) and a deep neural network prediction model (DNN).
+# DRIP
+DRIP is a polygenic risk score tool that based on dimensionality reduction with principal component analysis (PCA) followed by a mechin learning model.
 
 steps 1-6 should be to be done for each of the chromosomes separately.
-Steps 3, 5, 7 should be to be done o the training set and the test set separately. 
+Steps 3, 5, 7 should be done o the training set and the test set separately. 
 Step 6 is for the training and the test set together.
 
 
@@ -44,17 +44,4 @@ Step 6 is for the training and the test set together.
       ```
       Python3 match_pheno_IDs.py pheno_file train_X_files test_X_files output_path
       ```
-9.	Run NN on the PCA features.
-
-  for binary phenotypes:
-   
-      ```
-      python3 NN_for_binary_pheno.py X_train_chunks_file X_test_chunks_file y_train_chunks_file y_test_file output_path pheno_name
-      
-      ```
-  for continues phenotypes:
-    
-    ```
-      python3 NN_for_linear_pheno.py X_train_chunks_file X_test_chunks_file y_train_chunks_file y_test_file output_path pheno_name
-      
-    ```
+9.	Run linear/loggistic regression (LR) model on the PCA features.
